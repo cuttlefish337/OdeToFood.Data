@@ -25,6 +25,11 @@ namespace OdeToFood.Data
                 new Restaurant { Id = 3, Name = "La Costa", Location = "California", Cuisine=CuisineType.Mexican}
             };
         }
+
+        public Restaurant GetById(int id)
+        {
+            return restaurants.SingleOrDefault(r => r.Id == id);
+        }
         
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
